@@ -1,0 +1,20 @@
+<div class="info__container">
+    <div class="info__container-start" #startButton *ngIf="show">
+        <button (click)="startGame()"> Start Math Game </button>
+    </div>
+    <div class="info__container-guides" #ruleContainer *ngIf="!show">
+        <div class="info__container-title">
+            <span> Some rule of this Math game</span>
+        </div>
+        <div class="info__container-rules">
+            <div class="rule"> 1. You will have only <span> 25 seconds </span>per each question.</div>
+            <div class="rule"> 2. You'll get points on the basis of your correct answers</div>
+            <div class="rule"> 3. You can't select any option once time goes off.</div>
+            <div class="rule"> 4. You can't exit from the Game while you're playing </div>
+        </div>
+        <div class="info__container-button">
+            <button class="quit" (click)="ExitGame()"> Exit Game</button>
+            <button class="continue" (click)="continueGame()"> Continue</button>
+        </div>
+    </div>
+</div>

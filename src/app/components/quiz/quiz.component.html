@@ -1,0 +1,60 @@
+<div class="game__container" id="gameContainer">
+    <header>
+        <div class="game__Container-title">
+            Math Game Application
+        </div>
+        <div class="game__Container-timer">
+            <div class="timer__text">Time left</div>
+            <div class="timer__count">0{{timer}}</div>
+        </div>
+    </header>
+
+    <section>
+        <div class="game__Container-question">
+            <span>{{question_data_1.number}} . {{question_data_1.question}}</span>
+        </div>
+        <div class="game__Container-choices" *ngFor="let option of question_data_1.options ">
+            <div class="choice" id="choicesId" (click)="answerSelected(option)">
+                <span> {{option}} </span>
+                <div class="icon tick"><i class="fas fa-check"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="game__Container-count">
+            <span>
+                <p>{{questionNum}}</p>of<p>{{question_data.length}}</p>Questions
+            </span>
+        </div>
+        <button class="game__Container-button" (click)="nextQuestion()">Next Que</button>
+    </footer>
+</div>
+
+
+<ng-template [ngIf]= "done">
+    <div class="result-container">
+        <div class="result-container-message">
+            <h2> You answered correctly at {{correctAnswers}}/{{question_data.length}} questions</h2>
+            <br>
+        </div>
+        <button onclick="location.reload()">Reload</button>
+    </div>
+</ng-template>
+
+
+<!-- <div class="result__container">
+        <div class="result__container-icon">
+            <i class="fas fa-crown"> </i>
+        </div>
+        <div class="result__container-message">
+            You have completed the game
+        </div>
+        <div class="result__container-score">
+
+        </div>
+        <div class="result__container-buttons">
+            <button class="restart"> Replay</button>
+            <button class="quit"> Exit </button>
+        </div>
+    </div> -->
